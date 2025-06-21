@@ -59,3 +59,38 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+# Reproduction Steps
+```sh
+# Install PHP, Composer, Laravel Commands
+git clone https://github.com/adamusek-007/laravel-tutorial.git
+/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
+source ~/.bashrc
+
+# Install vendor files in project
+cd laravel-tutorial
+composer update
+
+# Install nvm, npx, node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+$HOME/.nvm/nvm.sh
+source ~/.bashrc
+nvm install 22
+
+# Prepare Laravel Project
+npm install && npm run build
+
+# Run Database migration to create database (using SQL Lite in this project)
+php artisan migrate
+
+# Create .env
+cp .env.example .env
+
+# Create new app key
+php artisan key:generate
+
+# Run Dev
+composer run dev
+```
+
