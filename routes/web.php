@@ -13,10 +13,8 @@ Route::get('/jobs', function () {
     ]);
 });
 
-Route::get('/jobs/{id}', function ($id){
-
-    
-    return view('job', ['job' => $job]);
+Route::get('/jobs/{id}', function ($id) {
+    return view('job', ['job' => Job::find($id)]);
 });
 
 Route::get('/contact', function () {
