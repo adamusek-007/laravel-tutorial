@@ -19,4 +19,4 @@ Route::post('/register', [RegistrationController::class, 'store']);
 
 
 Route::get('/login', [LoginController::class, 'create']);
-Route::get('/login', [LoginController::class, 'store']);
+Route::post('/login', [LoginController::class, 'store']);
